@@ -20,15 +20,20 @@ namespace Greetings.Demo.Api.Controllers
         }
 
         [HttpGet("GetMessages")]
-        public IEnumerable<Message> Get() 
+        public IEnumerable<Message> Get()
         {
             return _messageRepository.GetAll();
         }
 
         [HttpGet("GetByLanguageIdAndMessageTypeId")]
-        public Message Get([FromQuery] int languageId, [FromQuery] int messageTypeId)
+        public ActionResult<Message> Get([FromQuery] int languageId, [FromQuery] int messageTypeId)
         {
-            return _messageRepository.GetByLanguageIdAndMessageTypeId(languageId, messageTypeId);
+            var message = _messageRepository.GetByLanguageIdAndMessageTypeId(languageId, messageTypeId);
+            if (message == null)
+            {
+                return NotFound();
+            }
+            return message;
         }
     }
 }
