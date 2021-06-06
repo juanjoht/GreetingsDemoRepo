@@ -30,6 +30,8 @@ namespace Greetings.Demo.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IMessageRepository, MessageRepository>();
+            services.AddScoped<ILanguageRepository, LanguageRepository>();
+            services.AddScoped<IMessageTypeRepository, MessageTypeRepository>();
             services.AddControllers();
             services.AddDbContext<GreetingsDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
