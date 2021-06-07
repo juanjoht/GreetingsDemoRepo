@@ -34,7 +34,7 @@ namespace Greetings.Demo.Api
             services.AddScoped<IMessageTypeRepository, MessageTypeRepository>();
             services.AddControllers();
             services.AddDbContext<GreetingsDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Greetings.Demo.Api", Version = "v1" });
@@ -51,6 +51,12 @@ namespace Greetings.Demo.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Greetings.Demo.Api v1"));
             }
 
+            app.UseCors(builder =>
+            builder.WithOrigins(Configuration["AppSettings:Client_URL"].ToString())
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials()
+            );
             app.UseHttpsRedirection();
 
             app.UseRouting();

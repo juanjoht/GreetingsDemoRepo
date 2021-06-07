@@ -1,0 +1,91 @@
+.login-wrapper .field-form {
+    min-width: 100%;
+    max-width: 300px;
+    width: 100%;
+}
+
+.login-wrapper .field-full-width,
+.login-wrapper .btn-block {
+    width: 100%;
+}
+
+.container-link {
+    margin-top: 10px;
+}
+
+.login-wrapper mat-card-header {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: block;
+    font-weight: 700;
+}
+
+.login-wrapper mat-card-header mat-card-title {
+    font-size: 30px;
+    margin: 0;
+}
+
+.login-wrapper .mat-card {
+    padding: 40px 70px 50px;
+}
+
+.login-wrapper .mat-stroked-button {
+    border: 1px solid currentColor;
+    line-height: 54px;
+    //background: #f2f2f2
+}
+
+.login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0.8375em 0;
+}
+
+.field-header-image {
+    height: 65px !important;
+    width: 65px !important;
+    border-radius: 35% !important;
+    border: 1px solid rgba(56, 54, 54, 0.12);
+    background-image: url('/assets/img/user_tv.png');
+    background-size: cover;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.login-wrapper .mat-error {
+    text-align: right;
+}
+
+.radio-button-row{
+    margin: 10px 0 10px 0;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+.button-row {
+    display: table-cell;
+    width: 490px;
+  }
+
+  .button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+
+  .btn-greeting{
+      text-transform: capitalize;
+  }
+
+  .btn-logout
+  {
+    line-height: 12px;
+    width: 18px;
+    font-size: 8pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position:absolute;
+    top:0;
+    right:0;
+  }

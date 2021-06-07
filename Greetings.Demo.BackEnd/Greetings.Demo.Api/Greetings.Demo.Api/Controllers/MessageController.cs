@@ -26,9 +26,9 @@ namespace Greetings.Demo.Api.Controllers
         }
 
         [HttpGet("GetByLanguageIdAndMessageTypeId")]
-        public ActionResult<Message> Get([FromQuery] int languageId, [FromQuery] int messageTypeId)
+        public ActionResult<Message> Get([FromQuery] FilterMessage filterMessage)
         {
-            var message = _messageRepository.GetByLanguageIdAndMessageTypeId(languageId, messageTypeId);
+            var message = _messageRepository.GetByLanguageIdAndMessageTypeId(filterMessage.languageId, filterMessage.messageTypeId);
             if (message == null)
             {
                 return NotFound();

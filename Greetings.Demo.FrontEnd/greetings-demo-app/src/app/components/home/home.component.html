@@ -1,0 +1,30 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box" layout-align="center">
+        <div>
+            <button *ngIf="isLoggedin" class="btn-logout"  type="button" mat-stroked-button  (click)="logOut()">Log Out</button>
+        </div>
+        <mat-card-header layout-align="center">
+            <div class="header-logo">Greetings Demo App</div>
+        </mat-card-header>
+        <form  [formGroup]="homeForm" autocomplete="off"class="field-form">
+            <mat-card-content>
+                <mat-form-field class="field-full-width">
+                    <input matInput placeholder="Name" formControlName="name" name="Name"  >
+                    <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+                </mat-form-field>
+            </mat-card-content>
+            <button name="enter" (click)="loginWithGoogle()"  mat-stroked-button color="Google" class="btn-block">Login With Google</button>
+            <div class="radio-button-row">
+                <mat-radio-group aria-labelledby="radio-group-label"class="radio-group" [disabled]="homeForm.invalid"  >
+                    <mat-radio-button class="radio-button" (change)="radioChange($event)" *ngFor="let language of languages" [value]="language.id">
+                      {{language.description}}
+                    </mat-radio-button>
+                  </mat-radio-group>
+            </div>
+          <div class="button-row" *ngFor="let messageType of MessageTypes">
+            <button mat-stroked-button (click)="getMessage(messageType.id)" [disabled]="languageSelected === 0 "  class="btn-greeting" [id]="messageType.id" >{{messageType.name}}</button>
+          </div>
+        </form>
+    </mat-card>
+</div>
+
