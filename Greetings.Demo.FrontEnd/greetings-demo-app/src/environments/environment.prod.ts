@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlBaseApi: 'https://greetingsdemoapi.azurewebsites.net/'
 };

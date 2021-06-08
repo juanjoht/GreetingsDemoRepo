@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlBaseApi: 'https://localhost:44354/'
+  urlBaseApi: 'https://greetingsdemoapi.azurewebsites.net/'
 };
 
 /*
